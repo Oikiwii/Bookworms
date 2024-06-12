@@ -1,0 +1,51 @@
+﻿<Window x:Class="Bookworms.Admin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bookworms"
+        mc:Ignorable="d"
+        Title="Admin" Height="720" Width="1280">
+    <Grid>
+        <StackPanel>
+            <StackPanel  Background="Maroon" Orientation="Horizontal">
+                <Label FontSize="40" Foreground="White" Height="85" FontFamily="Candara Light" Margin="50,10,0,0" >BookWorms</Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Добавить" Margin="20,20,20,0" Width="200" Height="42" FontSize="22" Background="Maroon" HorizontalAlignment="Right" Click="ButtonAdd" Foreground="White">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Content="Редактировать" Margin="0,20,20,0" Width="200" Height="42" FontSize="22" Background="Maroon" HorizontalAlignment="Right" Click="ButtonEdit" Foreground="White">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Content="Удалить" Margin="0,20,20,0" Width="200" Height="42" FontSize="22" Background="Maroon" HorizontalAlignment="Right" Click="ButtonDel" Foreground="White">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+            <StackPanel >
+                <DataGrid x:Name="BookTabel" Margin="0 15 0 0" SelectionMode="Single" AutoGenerateColumns="False" FontSize="18" Width="1280">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="id" Width="50" Binding="{Binding Path=Id}" FontSize="18"></DataGridTextColumn>
+                        <DataGridTextColumn Header="" Width="*" Binding="{Binding Path=Name}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="" Width="*" Binding="{Binding Path=Price}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="" Width="*" Binding="{Binding Path=Description}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="" Width="*" Binding="{Binding Path=Category}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="" Width="*" Binding="{Binding Path=Avalilability}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
